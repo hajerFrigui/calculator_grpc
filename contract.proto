@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package calculatorPackage;
+
+service Calculator {
+    rpc addition(Operands) returns (IntResult);
+    rpc soustraction(Operands) returns (IntResult);
+    rpc multiplication(Operands) returns (IntResult);
+    rpc division(Operands) returns (RealResult);
+}
+
+message Operands{
+    int32 a = 1;
+    int32 b = 2;
+}
+
+message IntResult{
+    int32 value = 1;
+}
+
+message RealResult{
+    int32 value = 1;
+}
